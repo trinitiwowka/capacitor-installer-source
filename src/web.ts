@@ -10,4 +10,7 @@ export class CapacitorInstallerSourceWeb
     console.log('ECHO', options);
     return options;
   }
+  async getSourceInfo(): Promise<any> {
+      throw 'not implemented for web'
+  }
 }

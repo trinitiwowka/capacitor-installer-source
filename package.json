@@ -1,6 +1,6 @@
 {
   "name": "capacitor-installer-source",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Getting bundle id of the application that installed your application",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
