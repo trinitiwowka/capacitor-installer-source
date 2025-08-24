@@ -39,7 +39,7 @@ public class CapacitorInstallerSourcePlugin extends Plugin {
             }
 
             result.put("bundleId", installerBundleId);
-            call.success(result);
+            call.resolve(result);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
             call.reject("An unexpected error occurred: " + e.getMessage());
