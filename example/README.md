@@ -1,12 +1,14 @@
-## Created with Capacitor Create App
+## Example app
 
-This app was created using [`@capacitor/create-app`](https://github.com/ionic-team/create-capacitor-app),
-and comes with a very minimal shell for building an app.
+This Capacitor 8 app demonstrates `capacitor-installer-source` using the local
+package checkout.
 
 ### Running this example
 
 To run the provided example, you can use `npm start` command.
 
-```bash
-npm start
+```shell
+npm install
+npm run build
+npx cap sync
 ```
