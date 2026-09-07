@@ -25,7 +25,9 @@ jobs:
       - run: npm install -g npm@11.19.1
       - run: npm ci
       - name: Verify release tag matches package version
-        run: test "${{ github.event.release.tag_name }}" = "$(node -p \"require('./package.json').version\")"
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: node -e "const { version } = require('./package.json'); if (process.env.RELEASE_TAG !== version) throw new Error('Release tag ' + process.env.RELEASE_TAG + ' does not match package version ' + version)"
       - run: npm run verify:web
       - run: npm pack --dry-run
       - run: npm publish --access public --provenance
