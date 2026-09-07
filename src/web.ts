@@ -1,16 +1,9 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { CapacitorInstallerSourcePlugin } from './definitions';
+import type { CapacitorInstallerSourcePlugin, InstallerSourceInfo } from './definitions';
 
-export class CapacitorInstallerSourceWeb
-  extends WebPlugin
-  implements CapacitorInstallerSourcePlugin
-{
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
-  }
-  async getSourceInfo(): Promise<any> {
-      throw 'not implemented for web'
+export class CapacitorInstallerSourceWeb extends WebPlugin implements CapacitorInstallerSourcePlugin {
+  async getSourceInfo(): Promise<InstallerSourceInfo> {
+    return { bundleId: '' };
   }
 }
